@@ -1,9 +1,7 @@
-#pragma once
+#ifndef METANNFRAMEWORK_METANNFRAMEWORK_BASICMETATEMPLATESAMPLE_H_
+#define METANNFRAMEWORK_METANNFRAMEWORK_BASICMETATEMPLATESAMPLE_H_
 
-#include <iostream>
-#include <typeinfo>
-
-static int kCallCount = 3;
+constexpr int kCallCount = 3;
 
 constexpr int Func(int a, bool b) {
   if (b) {
@@ -22,18 +20,20 @@ constexpr int Func2(int a, bool b) {
 }
 
 template <typename T>
-struct Fun_ {
+struct Fun {
   using type = T;
 };
 
 template <>
-struct Fun_<int> {
+struct Fun<int> {
   using type = unsigned int;
 };
 
 template <>
-struct Fun_<long> {
+struct Fun<long> {
   using type = unsigned long;
 };
 
 void TestBasicMetaTemplate();
+
+#endif  // METANNFRAMEWORK_METANNFRAMEWORK_BASICMETATEMPLATESAMPLE_H_
