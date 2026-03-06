@@ -1,9 +1,10 @@
 ﻿#include "MetaNNFramework.h"
+#include "BasicMetaTemplateSample.h"
 
-using namespace std;
 
 int main()
 {
-	cout << "Hello CMake." << endl;
+	test_basic_meta_template();
+
 	return 0;
 }
