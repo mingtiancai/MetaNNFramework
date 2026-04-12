@@ -1,3 +1,6 @@
-﻿# Add source to this project's executable.
-add_executable (MetaNNFramework "MetaNNFramework.cpp" "MetaNNFramework.h" "BasicMetaTemplateSample.h" "BasicMetaTemplateSample.cpp")
-
+add_executable(MetaNNFramework
+  "basic_meta_template_sample.cc"
+  "basic_meta_template_sample.h"
+  "meta_nn_framework.cc"
+  "meta_nn_framework.h"
+)
