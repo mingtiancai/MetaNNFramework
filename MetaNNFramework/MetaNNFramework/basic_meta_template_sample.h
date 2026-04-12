@@ -36,6 +36,16 @@ struct UnsignedTypeOrSelf<long> {
 
 void TestBasicMetaTemplate();
 
+template<template <typename> class T1, typename T2>
+struct FuncTemplateInputBase {
+    using Type = typename T1<T2>::type;
+};
+
+template <template <typename> class T1, typename T2>
+using FuncTemplateInput = typename FuncTemplateInputBase<T1, T2>::Type;
+
+void TestFuncTemplateInput();
+
 }  // namespace metann
 
 #endif  // METANNFRAMEWORK_METANNFRAMEWORK_BASIC_META_TEMPLATE_SAMPLE_H_

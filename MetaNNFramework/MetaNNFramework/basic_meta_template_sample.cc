@@ -16,4 +16,9 @@ void TestBasicMetaTemplate() {
   std::cout << typeid(float_value).name() << '\n';
 }
 
+void TestFuncTemplateInput() {
+	FuncTemplateInput<std::remove_reference, int&> h = 3;
+	std::cout << typeid(h).name() << '\n';
+}
+
 }  // namespace metann
