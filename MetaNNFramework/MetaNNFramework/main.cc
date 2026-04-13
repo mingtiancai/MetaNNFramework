@@ -3,8 +3,9 @@
 #include "basic_meta_template_sample.h"
 
 int main() {
-  //metann::TestBasicMetaTemplate();
-	metann::TestFuncTemplateInput();
+	//metann::TestBasicMetaTemplate();
+	//metann::TestFuncTemplateInput();
+	metann::TestFuncTemplateOutput();
 
-  return 0;
+	return 0;
 }
