@@ -5,7 +5,8 @@
 int main() {
 	//metann::TestBasicMetaTemplate();
 	//metann::TestFuncTemplateInput();
-	metann::TestFuncTemplateOutput();
+	//metann::TestFuncTemplateOutput();
+	metann::TestConditionalType();
 
 	return 0;
 }

@@ -74,6 +74,18 @@ namespace metann {
 
 	void TestFuncTemplateOutput();
 
+	template <bool B, typename T, typename F>
+	struct ConditionalType {
+		using Type = T;
+	};
+
+	template <typename T, typename F>
+	struct ConditionalType<false, T, F> {
+		using Type = F;
+	};
+
+	void TestConditionalType();
+
 }  // namespace metann
 
 #endif  // METANNFRAMEWORK_METANNFRAMEWORK_BASIC_META_TEMPLATE_SAMPLE_H_

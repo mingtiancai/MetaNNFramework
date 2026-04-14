@@ -33,4 +33,13 @@ namespace metann {
 		std::cout << "b type: " << typeid(decltype(b)).name() << '\n';
 	}
 
+	void TestConditionalType()
+	{
+		ConditionalType<true, int, float>::Type a = 3;
+		ConditionalType<false, int, float>::Type b = 3;
+
+		std::cout << "a type: " << typeid(a).name() << '\n';
+		std::cout << "b type: " << typeid(b).name() << '\n';
+	}
+
 }  // namespace metann
