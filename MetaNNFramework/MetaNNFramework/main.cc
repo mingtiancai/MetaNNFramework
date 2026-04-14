@@ -9,7 +9,8 @@ int main() {
 	//metann::TestConditionalType();
 	//metann::TestFunctionSelector();
 	//metann::TestFuncWithEnableIf();
-	metann::TestLoop();
+	//metann::TestLoop();
+	metann::TestCRTP();
 
 	return 0;
 }

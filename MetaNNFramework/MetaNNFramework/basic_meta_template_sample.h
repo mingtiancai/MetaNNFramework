@@ -2,6 +2,7 @@
 #define METANNFRAMEWORK_METANNFRAMEWORK_BASIC_META_TEMPLATE_SAMPLE_H_
 
 #include <type_traits>
+#include <iostream>
 
 namespace metann {
 
@@ -153,7 +154,56 @@ namespace metann {
 	template<>
 	constexpr size_t OnesCount<0> = 0;
 
+	template <size_t... Inputs>
+	constexpr size_t Accumulate = 0;
+
+	template <size_t CurInput, size_t ... Inputs>
+	constexpr size_t Accumulate<CurInput, Inputs...> = CurInput + Accumulate<Inputs...>;
+
+	template <size_t... values>
+	constexpr size_t FuncAccumulate()
+	{
+		return (0 + ... + values);
+	}
+
 	void TestLoop();
+
+	template <typename D>
+	struct Base
+	{
+		template <typename T1>
+		void Func(const T1& input)
+		{
+			D* ptr = static_cast<D*>(this);
+			ptr->Imp(input);
+		}
+	};
+
+	struct Derive : public Base<Derive>
+	{
+		template <typename T1>
+		void Imp(const T1& input)
+		{
+			std::cout << "Derive::Imp called with input: " << input << '\n';
+		}
+	};
+
+	template<typename D>
+	struct BaseStatic {
+		static void Fun()
+		{
+			D::Imp();
+		}
+	};
+
+	struct DeriveStatic : public BaseStatic<DeriveStatic> {
+		static void Imp()
+		{
+			std::cout << "DeriveStatic::Imp called\n";
+		}
+	};
+
+	void TestCRTP();
 
 
 }  // namespace metann

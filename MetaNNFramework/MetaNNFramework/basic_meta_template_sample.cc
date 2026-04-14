@@ -70,6 +70,21 @@ namespace metann {
 	{
 		constexpr size_t res = OnesCount<45>;
 		std::cout << "res: " << res << '\n';
+
+		constexpr size_t acc = Accumulate<1, 2, 3, 4, 5>;
+		std::cout << "acc: " << acc << '\n';
+
+		constexpr size_t acc_empty = FuncAccumulate<1, 2, 3, 4, 5>();
+		std::cout << "acc: " << acc_empty << '\n';
+	}
+
+	void TestCRTP()
+	{
+		Derive d;
+		d.Func("implementation from derive class1");
+
+		DeriveStatic d2;
+		d2.Fun();
 	}
 
 }  // namespace metann
