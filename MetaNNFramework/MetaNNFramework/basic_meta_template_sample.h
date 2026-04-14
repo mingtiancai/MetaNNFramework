@@ -119,6 +119,7 @@ namespace metann {
 	constexpr size_t FunctionSelectorValue<B> = 2;
 
 	void TestFunctionSelector();
+	
 
 }  // namespace metann
 
