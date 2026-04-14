@@ -42,4 +42,19 @@ namespace metann {
 		std::cout << "b type: " << typeid(b).name() << '\n';
 	}
 
+	void TestFunctionSelector()
+	{
+		constexpr size_t h1 = FunctionSelector<A>::value;
+		constexpr size_t h2 = FunctionSelector<B>::value;
+
+		std::cout << "FunctionSelector<A>::value = " << h1 << '\n';
+		std::cout << "FunctionSelector<B>::value = " << h2 << '\n';
+
+		constexpr size_t h3 = FunctionSelectorValue<A>;
+		constexpr size_t h4 = FunctionSelectorValue<B>;
+
+		std::cout << "FunctionSelectorValue<A> = " << h3 << '\n';
+		std::cout << "FunctionSelectorValue<B> = " << h4 << '\n';
+	}
+
 }  // namespace metann

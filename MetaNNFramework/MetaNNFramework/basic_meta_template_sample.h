@@ -86,6 +86,40 @@ namespace metann {
 
 	void TestConditionalType();
 
+	struct A {
+
+	};
+
+	struct B {
+
+	};
+
+	template <typename T>
+	struct FunctionSelector {
+		constexpr static size_t value = 0;
+	};
+
+	template<>
+	struct FunctionSelector<A> {
+		constexpr static size_t value = 1;
+	};
+
+	template<>
+	struct FunctionSelector<B> {
+		constexpr static size_t value = 2;
+	};
+
+	template<typename T>
+	constexpr size_t FunctionSelectorValue = 0;
+
+	template<>
+	constexpr size_t FunctionSelectorValue<A> = 1;
+
+	template<>
+	constexpr size_t FunctionSelectorValue<B> = 2;
+
+	void TestFunctionSelector();
+
 }  // namespace metann
 
 #endif  // METANNFRAMEWORK_METANNFRAMEWORK_BASIC_META_TEMPLATE_SAMPLE_H_
