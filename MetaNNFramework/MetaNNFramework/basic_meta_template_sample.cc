@@ -57,4 +57,19 @@ namespace metann {
 		std::cout << "FunctionSelectorValue<B> = " << h4 << '\n';
 	}
 
+	void TestFuncWithEnableIf()
+	{
+		std::cout << typeid(WarpFuncWithEnableIf<true>()).name() << std::endl;
+		std::cout << typeid(WarpFuncWithEnableIf<false>()).name() << std::endl;
+
+		std::cout << typeid(FuncConditionWarp<true>()).name() << std::endl;
+		std::cout << typeid(FuncConditionWarp<false>()).name() << std::endl;
+	}
+
+	void TestLoop()
+	{
+		constexpr size_t res = OnesCount<45>;
+		std::cout << "res: " << res << '\n';
+	}
+
 }  // namespace metann

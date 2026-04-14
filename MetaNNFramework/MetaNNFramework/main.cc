@@ -7,7 +7,9 @@ int main() {
 	//metann::TestFuncTemplateInput();
 	//metann::TestFuncTemplateOutput();
 	//metann::TestConditionalType();
-	metann::TestFunctionSelector();
+	//metann::TestFunctionSelector();
+	//metann::TestFuncWithEnableIf();
+	metann::TestLoop();
 
 	return 0;
 }

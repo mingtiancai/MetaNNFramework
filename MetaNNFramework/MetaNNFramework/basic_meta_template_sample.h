@@ -119,7 +119,42 @@ namespace metann {
 	constexpr size_t FunctionSelectorValue<B> = 2;
 
 	void TestFunctionSelector();
-	
+
+	template <bool Check, std::enable_if_t<Check>* = nullptr>
+	auto FuncWithEnableIf() {
+		return int(9);
+	}
+
+	template <bool Check, std::enable_if_t<!Check>* = nullptr>
+	auto FuncWithEnableIf() {
+		return float(9.0);
+	}
+
+	template<bool Check>
+	auto WarpFuncWithEnableIf() {
+		return FuncWithEnableIf<Check>();
+	}
+
+	template<bool Check>
+	auto FuncConditionWarp() {
+		if constexpr (Check) {
+			return int(9);
+		}
+		else {
+			return float(9.0);
+		}
+	}
+
+	void TestFuncWithEnableIf();
+
+	template <size_t Input>
+	constexpr size_t OnesCount = (Input % 2) + OnesCount<Input / 2>;
+
+	template<>
+	constexpr size_t OnesCount<0> = 0;
+
+	void TestLoop();
+
 
 }  // namespace metann
 
