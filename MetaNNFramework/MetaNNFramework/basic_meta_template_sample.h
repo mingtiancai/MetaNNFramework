@@ -4,7 +4,7 @@
 #include <type_traits>
 #include <iostream>
 
-namespace metann {
+namespace metann_sample {
 
 	constexpr int kCallCount = 3;
 

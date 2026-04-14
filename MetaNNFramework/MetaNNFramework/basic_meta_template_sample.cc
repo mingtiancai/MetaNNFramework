@@ -3,7 +3,7 @@
 #include <iostream>
 #include <typeinfo>
 
-namespace metann {
+namespace metann_sample {
 
 	void TestBasicMetaTemplate() {
 		UnsignedTypeOrSelf<int>::Type int_value = 10;
