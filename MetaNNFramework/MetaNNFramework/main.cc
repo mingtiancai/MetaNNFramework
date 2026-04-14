@@ -10,7 +10,7 @@ int main() {
 	//metann::TestFunctionSelector();
 	//metann::TestFuncWithEnableIf();
 	//metann::TestLoop();
-	metann::TestCRTP();
+	//metann::TestCRTP();
 
 	return 0;
 }

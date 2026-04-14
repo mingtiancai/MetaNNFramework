@@ -4,4 +4,5 @@ add_executable(MetaNNFramework
   "meta_nn_framework.cc"
   "meta_nn_framework.h"
   "main.cc"
+  "container.cc"
 )
